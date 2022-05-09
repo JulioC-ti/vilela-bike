@@ -1,0 +1,29 @@
+.container-form{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    width: 100%;
+}
+.form input{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.form button{
+    margin-top: 8px;
+    width: 100%;
+    background-color: var(--azul);
+    border: none;
+    color: #fff;
+}
+.form button:hover{
+    background-color: var(--laranja);
+}
+.form .row h1{
+    text-align: center;
+    color: var(--azul);
+}

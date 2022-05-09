@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --azul: rgb(6, 14, 87);
+    --laranja: rgb(253, 122, 0)
+}
+body {
+    font-family:'roboto';
+    background-color: #f8f4f4;
+    }
+
+div {
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+.header-top{
+    background-color: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+}
+.form-search input[type=search],button{
+    padding: 0.8em;
+}
+.form-search button{
+    background-color: rgb(253, 122, 0);
+    border: none;
+    color: white;
+}
+.nav-main{
+    display: flex;
+}
+.nav-main li{
+    list-style: none;
+}
+.nav-main li a{
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0.1em;
+    color: white;
+}
+.nav-main li a:hover{
+    background-color: rgb(253, 122, 0);
+}
+.container{
+    display: flex;
+    align-items: stretch;
+}
+.nav-bar{
+    flex-grow: 1;
+    padding: 0.8em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nav-lateral{
+    display: flex;
+    flex-direction: column;
+}
+.nav-lateral li{
+    list-style: none;
+    margin: 8px;
+}
+.nav-lateral li a{
+    padding: 8px;
+    text-decoration: none;
+    color: var(--azul);
+}
+.nav-lateral li a:hover{
+    border-bottom: 1px solid var(--laranja);
+}
+main{
+    flex-grow: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+main .card{
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    box-shadow: 1px 1px 6px 1px gainsboro;
+    padding: 0.4em;
+    margin: 0.4em;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+.imagem img{
+    width: auto;
+    height: 200px;
+}
+.card:hover{
+    box-shadow: 1px 1px 3px var(--azul);
+}
+.card-title{
+    font-size: 25px;
+    margin: 0;
+}
+.card-data{
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+}
+.card-preco{
+    color: var(--azul);
+    font-weight: 800;
+    margin: 0; 
+}
+.logo{
+    color: #fff;
+}
+.card .logo-pagamento{
+    margin-top: 0,5em;
+    width: 80%;
+}
+.logo-pagamento-view{
+    width: 250px;
+}
+.view{
+    display: flex;
+    margin: 5em;
+}
+.btn-alugar{
+    text-decoration: none;
+    background-color: var(--azul);
+    font-weight: 700;
+    color: white;
+    padding: 0.6em 2em 0.6em 2em;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+}
+.btn-alugar:hover{
+    background-color:var(--laranja)
+}
+footer{
+    background-color:rgb(255, 0, 0);;
+    position: absolute;
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+}
+.col{
+    margin:1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img-detail{
+    width: 400px;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px 1px gainsboro;
+}
+.nav-bar{
+    flex-grow: 1;
+    padding: 0.8em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.disponivel{
+    padding: 2px;
+    border-radius: 2px;
+    background-color: greenyellow;
+}
+.indisponivel{
+    padding: 2px;
+    border-radius: 2px;
+    background-color: red;
+    color: #fff;
+}
+
+
