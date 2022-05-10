@@ -7,28 +7,8 @@
     $id_bicicleta = $_GET['visualizar'];
     $bicicleta = $bike->buscarBicicleta($id_bicicleta);
         if($id_bicicleta == $bicicleta[0]['id_bicicleta'] && !is_null($bicicleta[0]['id_bicicleta'])):
-            
+    include_once "header.php";
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title><?=$bicicleta[0]['modelo']." ".$bicicleta[0]['aro']?></title>
-    <link rel="stylesheet" href="css/layout.css">
-</head>
-
-<body>
-    
-    <?php include_once "header.php"?>
   
     <main>
        
@@ -45,7 +25,7 @@
                     <?php endif;?>
             <p><?=$bicicleta[0]['descricao']?></p>
         <img src="img/logo pagamento.jpg" class="logo-pagamento-view">
-        <a href="#" class="btn-alugar">ALUGAR</a>
+        <a href="#" class="btn-alugar">ALUGAR</a><a href="index.php" class="btn-voltar">Voltar</a>
         </div>
 
         </div>

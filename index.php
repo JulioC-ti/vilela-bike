@@ -4,22 +4,6 @@
  $bike = new Bicicleta();
  $bicicleta = $bike->listBicicleta();
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/formulario.css">
-    <title>VILELA BIKE</title>
-</head>
-
-<body>
 <?php include_once "header.php"?>
     <div class="container">
         <nav class="nav-bar">
@@ -46,7 +30,7 @@
                         <span class="indisponivel">Indisponível</span>
                     <?php endif;?>
                 <p class="card-data"><?=$b['descricao']?></p>
-                <h2 class="card-preço">R$ <?=$b['valor']?></h2>
+                <h2 class="card-preço">R$ <?=str_replace(".",",",$b['valor'])?></h2>
                 <img src="img/logo pagamento.jpg" class="logo-pagamento">
                 <a href="bike.php?visualizar=<?=$b['id_bicicleta']?>" class="btn-alugar">Sobre</a>
             </div>

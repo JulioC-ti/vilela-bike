@@ -19,6 +19,7 @@
     background-color: var(--azul);
     border: none;
     color: #fff;
+    text-transform: uppercase;
 }
 .form button:hover{
     background-color: var(--laranja);
@@ -26,4 +27,7 @@
 .form .row h1{
     text-align: center;
     color: var(--azul);
+}
+.btn-entrar{
+    background-color: red;
 }
