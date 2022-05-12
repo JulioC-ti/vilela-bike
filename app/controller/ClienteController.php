@@ -18,6 +18,26 @@ class ClienteController{
             }else{
                 array_push($erro,"Preencha o CPF Corretamente");
             }
+            if(isset($_POST['telefone']) && !empty($_POST['telefone'])){
+                $nome = $_POST['telefone'];
+            }else{
+                array_push($erro,"Preencha o telefone Corretamente");
+            }
+            if(isset($_POST['endereco']) && !empty($_POST['endereco'])){
+                $nome = $_POST['endereco'];
+            }else{
+                array_push($erro,"Preencha o nome endereco");
+            }
+            if(isset($_POST['beirro']) && !empty($_POST['beirro'])){
+                $nome = $_POST['beirro'];
+            }else{
+                array_push($erro,"Preencha o beirro Corretamente");
+            }
+            if(isset($_POST['cidade']) && !empty($_POST['cidade'])){
+                $nome = $_POST['cidade'];
+            }else{
+                array_push($erro,"Preencha a cidade Corretamente");
+            }
             //Se houverem erros o sistema retorna para o usuário
             if(count($erro)>0){
                 return $erro;
