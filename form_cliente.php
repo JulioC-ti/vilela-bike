@@ -2,6 +2,7 @@
 require "autoload.php";
 use App\Controller\ClienteController;
 include_once "header.php";
+ClienteController::isBloqued();
 ?>
     <div class="container-form">
       <form method="post">

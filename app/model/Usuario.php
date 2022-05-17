@@ -47,7 +47,7 @@ class Usuario
     public function buscarUsuario($email)
     {
         try {
-            $sql = "SELECT * FROM usuario WHERE email = ?";
+            $sql = "SELECT * FROM tb_usuario WHERE `login` = ?";
             $list = Sql::getData($sql, [$email]);
             return $list;
         } catch (\Exception $e) {

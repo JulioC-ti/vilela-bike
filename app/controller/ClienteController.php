@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Model\Cliente;
+use App\Model\Usuario;
 class ClienteController{
     public static function cliente(){
         //Verifica o tipo de requisição que foi enviado
@@ -67,4 +68,50 @@ class ClienteController{
             }
         }
     }
+    /**
+     * A função abaixo efetua o login de usuário e inicia a sessão, dentro do POST passe obrigatoriamente
+     * os valores $login=$_POST['login'] $senha=$_POST['senha']
+     */
+    public static function login(){
+    
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            
+            $login= $_POST['login'];
+            $senha =$_POST['senha'];
+        
+            $erro = [];
+            $user = new Usuario();
+            $usuario =$user->buscarUsuario($login);
+            
+            if(count($usuario) > 0){
+                if($usuario[0]['senha'] === $senha){
+                    session_regenerate_id();
+                    $_SESSION['logado'] = $usuario[0];
+                    header("location:index.php");
+                }else{
+                    array_push($erro,"Login ou senha inválidos!");
+                    return $erro;
+                }
+            }else{
+                array_push($erro,"Usuário não localizado, ou não existe");
+                return $erro;
+            }
+
+        }
+    }
+    public static function isLogged(){
+        
+        if(isset($_SESSION['logado'])){
+            header("location:index.php");
+        }
+    }
+    public static function isBloqued(){
+        
+        if(!isset($_SESSION['logado'])){
+            header("location:index.php");
+        }elseif($_SESSION['logado']['tipo_acesso'] != 'admin'){
+            header("location:index.php");
+        }
+    }
+    
 }
