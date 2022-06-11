@@ -37,18 +37,22 @@ class Cliente
         }
     }
 
-    public function listCliente()
+    public function listCliente($order = null)
     {
-        $sql = "SELECT * FROM tb_cliente ORDER BY id DESC";
+        if($order == null){
+            $sql = "SELECT * FROM tb_cliente ORDER BY id DESC";
+        }else{
+            $sql = "SELECT * FROM tb_cliente ORDER BY id ASC";
+        }
         $list = Sql::getList($sql);
         return $list;
     }
 
-    public function buscarCliente($cpf)
+    public function buscarCliente($field,$valor)
     {
         try {
-            $sql = "SELECT * FROM tb_cliente WHERE cpf = ?";
-            $list = Sql::getData($sql, [$cpf]);
+            $sql = "SELECT * FROM tb_cliente WHERE $field = ?";
+            $list = Sql::getData($sql, [$valor]);
             return $list;
         } catch (\Exception $e) {
             echo "ERRO: " . $e;

@@ -31,3 +31,6 @@
 .btn-entrar{
     background-color: red;
 }
+textarea{
+    resize: none;
+}

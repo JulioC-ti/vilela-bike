@@ -6,15 +6,7 @@
 ?>
 <?php include_once "header.php"?>
     <div class="container">
-        <nav class="nav-bar">
-            <h3>Categorias</h3>
-            <strong>Aro</strong>
-            <ul class="nav-lateral">
-                <li><a href="#">Aro 24</a></li>
-                <li><a href="#">Aro 26</a></li>
-                <li><a href="#">Aro 29</a></li>
-            </ul>
-        </nav>
+    <?php include_once "navbar.php";?>
         <main>
             <?php if(count($bicicleta)):
                 foreach($bicicleta as $b ):

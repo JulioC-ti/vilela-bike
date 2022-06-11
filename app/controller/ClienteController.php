@@ -105,6 +105,9 @@ class ClienteController{
             header("location:index.php");
         }
     }
+    /**
+     * Verifica se o usuário está logado e se ele é um admin
+     */
     public static function isBloqued(){
         
         if(!isset($_SESSION['logado'])){

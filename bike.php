@@ -2,11 +2,11 @@
  require "autoload.php";
  use App\Model\Bicicleta;
  
- if(isset($_GET['visualizar']) && $_GET['visualizar']>0):
+ if(isset($_GET['visualizar'])):
     $bike = new Bicicleta();
     $id_bicicleta = $_GET['visualizar'];
     $bicicleta = $bike->buscarBicicleta($id_bicicleta);
-        if($id_bicicleta == $bicicleta[0]['id_bicicleta'] && !is_null($bicicleta[0]['id_bicicleta'])):
+    if($id_bicicleta == $bicicleta[0]['id_bicicleta'] && !is_null($bicicleta[0]['id_bicicleta'])):
     include_once "header.php";
 ?>
   
@@ -25,7 +25,7 @@
                     <?php endif;?>
             <p><?=$bicicleta[0]['descricao']?></p>
         <img src="img/logo pagamento.jpg" class="logo-pagamento-view">
-        <a href="#" class="btn-alugar">ALUGAR</a><a href="index.php" class="btn-voltar">Voltar</a>
+        <a href="aluguel.php?alugar=<?=$bicicleta[0]['id_bicicleta']?>" class="btn-alugar">ALUGAR</a><a href="index.php" class="btn-voltar">Voltar</a>
         </div>
 
         </div>
