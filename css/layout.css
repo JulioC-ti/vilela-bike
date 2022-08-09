@@ -86,18 +86,22 @@ main{
 main .card{
     background-color: #fff;
     width: 250px;
-    /* height: 350px; */
+    height: 400px;
     box-shadow: 1px 1px 6px 1px gainsboro;
     padding: 0.4em;
     margin: 0.4em;
     border-radius: 0.5em;
     display: flex;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
+    justify-content: space-between;
 }
 .imagem img{
-    width: auto;
+    width: 200px;
     height: 200px;
+    overflow: auto;
+    box-sizing: border-box;
+    object-fit: cover;
 }
 .card:hover{
     box-shadow: 1px 1px 3px var(--azul);
@@ -217,4 +221,30 @@ table,th,td{
     color: cornflowerblue;
     font-size: 16px;
     padding: 10px;
+}
+.logo-print{
+    background-image: url('./img/logo-pagamento.jpg');
+    background-repeat: no-repeat;
+}
+@media print {
+    .header-top{
+        display: none;
+    }
+    .logo-print{
+        background-image: url('./img/logo-pagamento.jpg');
+        width: 120px;
+        height: 30px;
+        background-repeat: no-repeat;
+    }
+}
+.status{
+    text-decoration: none;
+    font-size: 20px;
+}
+.aros{
+    border: 1px solid blue;
+    width: 100px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 4px;
 }

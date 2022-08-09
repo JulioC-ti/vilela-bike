@@ -14,7 +14,7 @@
        
         <div class="view">
             <div class="col">
-                <img src="img/BIKE 29.jpg" class="img-detail">
+                <img src="img/<?=$bicicleta[0]['foto_bike']?>" class="img-detail">
             </div>
         <div class="col">
             <h1 class="card-title"><?=$bicicleta[0]['modelo']." ".$bicicleta[0]['aro']?></h1>
@@ -24,7 +24,7 @@
                         <span class="indisponivel">Indisponível</span>
                     <?php endif;?>
             <p><?=$bicicleta[0]['descricao']?></p>
-        <img src="img/logo pagamento.jpg" class="logo-pagamento-view">
+        <img src="img/logo-pagamento.jpg" class="logo-pagamento-view">
         <a href="aluguel.php?alugar=<?=$bicicleta[0]['id_bicicleta']?>" class="btn-alugar">ALUGAR</a><a href="index.php" class="btn-voltar">Voltar</a>
         </div>
 

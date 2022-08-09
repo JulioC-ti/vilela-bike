@@ -58,4 +58,18 @@ class Cliente
             echo "ERRO: " . $e;
         }
     }
+    public function mudaStatus($idcliente)
+    {
+
+        $result = $this->buscarCliente('id',$idcliente);
+        if($result[0]['status_cliente']){
+            $sql = "UPDATE tb_cliente SET status_cliente = ? WHERE id =?";
+            Sql::setData($sql,[0,$idcliente]);
+            return true;
+        }else{
+            $sql = "UPDATE tb_cliente SET status_cliente = ? WHERE id =?";
+            Sql::setData($sql,[1,$idcliente]);
+            return true;
+        }
+    }
 }

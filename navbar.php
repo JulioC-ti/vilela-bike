@@ -2,14 +2,26 @@
     <h3>Categorias</h3>
     <strong>Aro</strong>
     <ul class="nav-lateral">
-        <li><a href="#">Aro 24</a></li>
-        <li><a href="#">Aro 26</a></li>
-        <li><a href="#">Aro 29</a></li>
-        <?php
-        if(isset($_SESSION['logado']) && $_SESSION['logado']['tipo_acesso'] == 'admin'):
-        ?>
-        <li><a href="listar.php">Listar</a></li>
-        <?php endif;?>
+        <div class="aros">
+            <?php
+
+            use App\Model\Bicicleta;
+
+            $bike = new Bicicleta();
+            foreach ($bike->listAro() as $a) :
+            ?>
+                <li><a href="index.php?busca=<?= $a['id_aro'] ?>">Aro <?= $a['perfil_aro'] ?></a></li>
+            <?php
+            endforeach;
+            if (isset($_SESSION['logado']) && $_SESSION['logado']['tipo_acesso'] == 'admin') :
+            ?>
+        </div>
+        <div class="aros">
+            <li><a href="listar.php">Listar</a></li>
+            <li><a href="listar-aluguel.php">Aluguel</a></li>
+            <li><a href="insert-bike.php">Inserir</a></li>
+        </div>
+    <?php endif; ?>
     </ul>
 
 </nav>

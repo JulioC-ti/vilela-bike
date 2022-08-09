@@ -39,11 +39,20 @@ class Aluguel
 
     public function getAluguel($dados)
     {
-        $sql = "SELECT id_aluguel,nome,cpf,telefone,endereco,bairro,cidade,status_cliente,nome_usuario,id_bicicleta,aro,cor, modelo,descricao,valor,marca,status_bike FROM tb_aluguel
+        $sql = "SELECT id_aluguel,retirada,entrega,observacao,nome,cpf,telefone,endereco,bairro,cidade,status_cliente,nome_usuario,id_bicicleta,aro,cor, modelo,descricao,valor,marca,status_bike FROM tb_aluguel
         INNER JOIN tb_bicicleta ON tb_aluguel.tb_bicicleta_id_bicicleta = tb_bicicleta.id_bicicleta
         INNER JOIN tb_cliente ON tb_aluguel.tb_cliente_id = tb_cliente.id
         INNER JOIN tb_usuario ON tb_aluguel.tb_usuario_id_user = tb_usuario.id_user WHERE id_aluguel =? ORDER BY id_aluguel DESC";
         $list = Sql::getData($sql, [$dados]);;
+        return $list;
+    }
+    public function listAluguel()
+    {
+        $sql = "SELECT id_aluguel,retirada,entrega,observacao,nome,cpf,telefone,endereco,bairro,cidade,status_cliente,nome_usuario,id_bicicleta,aro,cor, modelo,descricao,valor,marca,status_bike FROM tb_aluguel
+        INNER JOIN tb_bicicleta ON tb_aluguel.tb_bicicleta_id_bicicleta = tb_bicicleta.id_bicicleta
+        INNER JOIN tb_cliente ON tb_aluguel.tb_cliente_id = tb_cliente.id
+        INNER JOIN tb_usuario ON tb_aluguel.tb_usuario_id_user = tb_usuario.id_user ORDER BY id_aluguel DESC";
+        $list = Sql::getList($sql);
         return $list;
     }
 

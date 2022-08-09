@@ -7,14 +7,14 @@ class Bicicleta
     public function insertBicicleta($data)
     {
         try {
-            $sql = "INSERT INTO tb_bicicleta(id_bicicleta, aro, cor, modelo, marca, status_bike) VALUES (?,?,?,?,?,?)";
+            $sql = "INSERT INTO tb_bicicleta(aro, cor, modelo,descricao,valor, marca,foto_bike) VALUES (?,?,?,?,?,?,?)";
             Sql::setData($sql, $data);
             return true;
         } catch (\Exception $e) {
             return $e->getMessage();
         }
     }
-    
+
     public function deleteBicicleta($dados)
     {
         try {
@@ -37,9 +37,20 @@ class Bicicleta
         }
     }
 
-    public function listBicicleta()
+    public function listBicicleta($data = '')
     {
-        $sql = "SELECT * FROM tb_bicicleta ORDER BY id_bicicleta DESC";
+        if (!empty($data)) {
+            $sql = "SELECT * FROM tb_bicicleta WHERE aro = ?ORDER BY id_bicicleta DESC";
+            $list = Sql::getData($sql, [$data]);
+        } else {
+            $sql = "SELECT * FROM tb_bicicleta ORDER BY id_bicicleta DESC";
+            $list = Sql::getList($sql);
+        }
+        return $list;
+    }
+    public function listAro()
+    {
+        $sql = "SELECT * FROM tb_aro";
         $list = Sql::getList($sql);
         return $list;
     }

@@ -29,11 +29,11 @@ ClienteController::isBloqued();
                                 <td><?= $c['nome'] ?></td>
                                 <td><?= $c['telefone'] ?></td>
                                 <td>
-                                    <a class="btn-ver" href="detalheCliente.php?cliente=<?= $c['id'] ?>" title="Clique para ver detalhes">&#128065;</a>
+                                    <a class="status" href="detalheCliente.php?cliente=<?= $c['id'] ?>" title="Clique para ver detalhes">&#128065;</a>
                                     <?php if ($c['status_cliente']) : ?>
-                                        <a href="#" title="Desativado">&#x274E;</a>
+                                        <a class="status" href="status.php?cliente=<?= $c['id']?>" title="Desativar">&#x274E;</a>
                                     <?php else : ?>
-                                        <a href="#" title="Ativado">&#9989;</a>
+                                        <a class="status" href="status.php?cliente=<?= $c['id']?>" title="Ativar">&#9940;</a>
                                     <?php endif; ?>
                                 </td>
                             </tr>
