@@ -27,7 +27,7 @@
 
             <?php
             if (isset($_SESSION['logado']) && $_SESSION['logado']['tipo_acesso'] == 'admin') {
-                echo "<li><a href='form_cliente.php'>Novo Cliente</a></li>";
+                
                 echo "<li><a>" . $_SESSION['logado']['nome_usuario'] . "</a></li>";
                 echo "<li><a href='logout.php'>Sair</a></li>";
             } elseif (isset($_SESSION['logado']) && $_SESSION['logado']['tipo_acesso'] == 'cliente') {

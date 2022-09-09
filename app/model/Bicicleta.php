@@ -8,8 +8,8 @@ class Bicicleta
     {
         try {
             $sql = "INSERT INTO tb_bicicleta(aro, cor, modelo,descricao,valor, marca,foto_bike) VALUES (?,?,?,?,?,?,?)";
-            Sql::setData($sql, $data);
-            return true;
+            return Sql::setData($sql, $data);
+            
         } catch (\Exception $e) {
             return $e->getMessage();
         }

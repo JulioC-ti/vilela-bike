@@ -31,7 +31,20 @@ print_r($Cbike->novaBike());
 
       <div class="row">
         <label for="aro">Aro</label>
-        <input type="number" class="form-control" placeholder="Digite seu aro" min="2" max="255" name="aro" />
+        <select name="aro" class="form-control">
+        <option disabled selected>Escolha um aro</option>
+        <?php
+
+            use App\Model\Bicicleta;
+
+            $bike = new Bicicleta();
+            foreach ($bike->listAro() as $a) :
+            ?>
+                <option value="<?= $a['id_aro'] ?>">Aro <?= $a['perfil_aro'] ?></option>
+            <?php
+            endforeach;
+            ?>
+            </select>
       </div>
 
       <div class="row">

@@ -16,7 +16,7 @@ class BikeController
             $upload->foto = $_FILES['foto_bike'];
             $upload->dir = "img";
             $upload->size = 4000000;
-            $upload->setNome($_POST['foto_bike']);
+            $upload->setNome($_FILES['foto_bike']['name']);
             
             $data = [
                 $_POST['aro'],
@@ -28,7 +28,7 @@ class BikeController
                 $upload->sendImage()
             ];
             $bike = new Bicicleta();
-            $bike->insertBicicleta($data);
+            print_r($bike->insertBicicleta($data));
         }
     }
 }

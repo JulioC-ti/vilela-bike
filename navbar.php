@@ -20,6 +20,8 @@
             <li><a href="listar.php">Listar</a></li>
             <li><a href="listar-aluguel.php">Aluguel</a></li>
             <li><a href="insert-bike.php">Inserir</a></li>
+            <li><a href="form_cliente.php">Novo Cliente</a></li>
+
         </div>
     <?php endif; ?>
     </ul>
