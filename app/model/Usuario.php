@@ -7,7 +7,7 @@ class Usuario
     public function insertUsuario($data)
     {
         try {
-            $sql = "INSERT INTO `tb_usuario`(`login`, `senha`, `nome_usuario`) VALUES (?,?,?)";
+            $sql = "INSERT INTO `tb_usuario`(`login`, `senha`, `nome_usuario`, `tipo_acesso`) VALUES (?,?,?,?)";
             Sql::setData($sql, $data);
             return true;
         } catch (\Exception $e) {
@@ -29,7 +29,7 @@ class Usuario
     public function updateUsuario($dados)
     {
         try {
-            $sql = "UPDATE tb_usuario SET nome_usuario=? WHERE id_user=?";
+            $sql = "UPDATE tb_usuario SET nome_usuario=?, tipo_acesso=? WHERE id_user=?";
             Sql::setData($sql, $dados);
             return true;
         } catch (\Exception $e) {

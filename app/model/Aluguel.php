@@ -7,7 +7,7 @@ class Aluguel
     public function insertAluguel($data)
     {
         try {
-            $sql = "INSERT INTO tb_aluguel(entrega, observacao, tb_bicicleta_id_bicicleta, tb_cliente_id, tb_usuario_id_user) VALUES (?,?,?,?,?)";
+            $sql = "INSERT INTO tb_aluguel(retirada, entrega, observacao, tb_bicicleta_id_bicicleta, tb_cliente_id, tb_usuario_id_user) VALUES (?,?,?,?,?,?)";
             Sql::setData($sql, $data);
             return true;
         } catch (\Exception $e) {

@@ -7,7 +7,7 @@ class Bicicleta
     public function insertBicicleta($data)
     {
         try {
-            $sql = "INSERT INTO tb_bicicleta(aro, cor, modelo,descricao,valor, marca,foto_bike) VALUES (?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tb_bicicleta(aro,cor,modelo,descricao,valor,marca,foto_bike,status_bike) VALUES (?,?,?,?,?,?,?,?)";
             return Sql::setData($sql, $data);
             
         } catch (\Exception $e) {
@@ -29,7 +29,7 @@ class Bicicleta
     public function updateBicicleta($dados)
     {
         try {
-            $sql = "UPDATE tb_bicicleta SET id_bicicleta=?,aro=?,cor=?,modelo=?,marca=?,status_bike=?,user_id=? WHERE id =?";
+            $sql = "UPDATE tb_bicicleta SET id_bicicleta=?,aro=?,cor=?,modelo=?,descricao=?,marca=?,status_bike=?,user_id=? WHERE id =?";
             Sql::setData($sql, $dados);
             return true;
         } catch (\Exception $e) {

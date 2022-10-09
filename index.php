@@ -42,7 +42,9 @@ $bike = new Bicicleta();
                 </div>
             <?php endforeach;
         else : ?>
-            <h1>Não Existem Bicicletas Cadastradas!.</h1>
+            <div class="aviso">
+                <h1>Não Existem Bicicletas Cadastradas!.</h1>
+            </div>
         <?php endif; ?>
 </div>
 </main>

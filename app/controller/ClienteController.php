@@ -29,10 +29,10 @@ class ClienteController{
             }else{
                 array_push($erro,"Preencha o nome endereco");
             }
-            if(isset($_POST['beirro']) && !empty($_POST['beirro'])){
-                $nome = $_POST['beirro'];
+            if(isset($_POST['bairro']) && !empty($_POST['bairro'])){
+                $nome = $_POST['bairro'];
             }else{
-                array_push($erro,"Preencha o beirro Corretamente");
+                array_push($erro,"Preencha o bairro Corretamente");
             }
             if(isset($_POST['cidade']) && !empty($_POST['cidade'])){
                 $nome = $_POST['cidade'];

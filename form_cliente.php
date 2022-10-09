@@ -35,7 +35,7 @@ ClienteController::isBloqued();
 
       <div class="row">
         <label for="Telefone">Telefone</label>
-        <input type="number" class="form-control" placeholder="Somente Números" max="11" min="11" required name="telefone" />
+        <input type="number" class="form-control" placeholder="Somente Números" maxlenght="11"required name="telefone" />
       </div>
 
       <div class="row">

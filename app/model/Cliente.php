@@ -7,7 +7,7 @@ class Cliente
     public function insertCliente($data)
     {
         try {
-            $sql = "INSERT INTO tb_cliente(nome, cpf, telefone, endereco, bairro, cidade, user_id) VALUES (?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tb_cliente(nome, cpf, telefone, endereco, bairro, cidade, status_bike, user_id) VALUES (?,?,?,?,?,?,?,?)";
             Sql::setData($sql, $data);
             return true;
         } catch (\Exception $e) {
@@ -29,7 +29,7 @@ class Cliente
     public function updateCliente($dados)
     {
         try {
-            $sql = "UPDATE tb_cliente SET nome=?,cpf=?,telefone=?,endereco=?,bairro=?,cidade=?,user_id=? WHERE id =?";
+            $sql = "UPDATE tb_cliente SET nome=?,cpf=?,telefone=?,endereco=?,bairro=?,cidade=?,status_bike=?,user_id=? WHERE id =?";
             Sql::setData($sql, $dados);
             return true;
         } catch (\Exception $e) {

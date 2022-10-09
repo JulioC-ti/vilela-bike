@@ -95,6 +95,7 @@ main .card{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 8px;
 }
 .imagem img{
     width: 200px;
@@ -199,6 +200,15 @@ footer{
     font-weight: bold;
     border-radius: 4px;
 }
+.aviso{
+    background: #f3b8b8;
+    color: #5a1e1e;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 50px;
+    align-items: center ;
+}
 /* Foramtação da tabela */
 table {
     border-collapse: collapse;
@@ -207,6 +217,7 @@ table {
 table,th,td{
     border: 1px solid black;
     padding: 8px;
+    text-align: center;
 }
 /* Elementos Globais */
 
@@ -243,7 +254,7 @@ table,th,td{
 }
 .aros{
     border: 1px solid blue;
-    width: 100px;
+    width: 125px;
     border-radius: 10px;
     text-align: center;
     margin: 4px;

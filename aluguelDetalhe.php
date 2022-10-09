@@ -23,7 +23,7 @@ $c = $aluguel->getAluguel($_GET['aluguel'])[0];
 <body>
     <main>
         <div class="logo-print"></div>
-        <div class="container" style="flex-direction: column;width:800px">
+        <div class="container" style="flex-direction: column;width:800px; margin-top: 10px">
             <table>
                 <thead>
                     <td><img src="img/site/logo.png" width="150"></td>
